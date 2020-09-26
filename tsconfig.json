@@ -20,6 +20,7 @@
     "jsx": "react",
     "noImplicitReturns": true,
     "noImplicitThis": true,
+    "noImplicitAny": false,
     "noUnusedLocals": false,
     "removeComments": true,
     "sourceMap": true,
