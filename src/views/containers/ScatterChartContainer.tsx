@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import { ScatterChart } from "../components/ScatterChart/ScatterChart";
-import { ScatterChartDataType } from "../../states/species/types";
 import { useSpeciesPeople } from "../../states/species/hooks/useSpeciesPeople";
 
 const ScatterChartContainer = () => {

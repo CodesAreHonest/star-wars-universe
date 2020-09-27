@@ -1,6 +1,6 @@
-import { useStateValue } from "../../../store";
 import axios from "axios";
-import ApiAction from "../../../utils/ApiAction";
+
+import { useStateValue } from "../../../store";
 import { getPeopleFailure, getPeopleSuccess } from "../actions";
 import { ISpeciesPeopleResponse } from "../types";
 

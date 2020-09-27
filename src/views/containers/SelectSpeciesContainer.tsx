@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment, useCallback } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import { useSpecies } from "../../states/species/hooks/useSpecies";
 import { HTMLSelect } from "../components/HTMLSelect/HTMLSelect";
 import { useSpeciesPeople } from "../../states/species/hooks/useSpeciesPeople";
@@ -28,7 +28,7 @@ const SelectSpeciesContainer: React.FC = () => {
     const classes = useStyles();
 
     const [results, getList]                    = useSpecies();
-    const [_, getSpeciesPeople]                 = useSpeciesPeople();
+    const [, getSpeciesPeople]                  = useSpeciesPeople();
     const [selectedSpecies, setSelectedSpecies] = useState("");
 
     const onSelectChange = (event) => {
@@ -39,6 +39,8 @@ const SelectSpeciesContainer: React.FC = () => {
 
     useEffect(() => {
         getList();
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

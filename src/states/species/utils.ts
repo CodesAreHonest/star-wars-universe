@@ -19,7 +19,7 @@ export const peopleScatterChartFormat = (peopleSpecies: ISpeciesPeopleResponse[]
         const verticalData   = height === "unknown" ? 0 : parseInt(height);
 
         const toolTipHtml = `
-            <div style="padding: 8px">
+            <div style="padding: 8px; background-color: #f7f7f7">
                 <div style="font-weight: bold; margin-bottom: 8px">
                     <div style="text-transform: capitalize">Name:</div>
                     <div style="text-transform: uppercase; color: dodgerblue">${name}</div>

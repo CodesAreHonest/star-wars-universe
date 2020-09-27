@@ -2,9 +2,7 @@ import React, { useMemo } from 'react';
 import { AppBar, Container, Toolbar, Typography } from "@material-ui/core";
 import { useStyles } from "./useStyles";
 
-type FixedNavBarProps = {}
-
-export const FixedNavBar: React.FC = ({}: FixedNavBarProps) => {
+export const FixedNavBar: React.FC = () => {
     const classes = useStyles();
 
     return useMemo(() => (
@@ -17,5 +15,5 @@ export const FixedNavBar: React.FC = ({}: FixedNavBarProps) => {
                 </Toolbar>
             </Container>
         </AppBar>
-    ), []);
+    ), [classes.title]);
 };
