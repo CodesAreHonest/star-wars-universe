@@ -1,44 +1,91 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Star Wars Universe
+An application allow user to view the information of peoples under selected species, the weight and mass of people are plotted on **Scatter Graph**.
 
-## Available Scripts
+***
 
-In the project directory, you can run:
+Table Of Contents 
+=================
 
-### `npm start`
+  * [About The Project](#about-the-project)
+    * [File Structure](#file-structure)
+  * [Limitation](#limitation)
+  * [Getting Started](#getting-started)
+    * [Running in Development](#running-in-development)
+  * [Environment](#environment)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+***
 
-### `npm test`
+About The Project
+=================
+The project setup with **Presentational and Container Component Pattern** where presentational component
+is responsible for user interface and reusability and container component are concerned on side effects.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The file structure are constructed and arranged in extensible and maintainable manners to establish highly scalable folder structure.
 
-### `npm run build`
+We will utilize the ```useContext``` and ```useReducer``` hooks to manage states like Redux for better state 
+communications in entire application. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+File structure
+-----------------
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+src/
+├── api/                 => store collection of APIs
+|   ├── species.ts       => species API endpoints
+├── states/              => container components and global states
+|   ├── species/         => 
+|       ├── hooks/              => species' related hooks for presentational component
+|           ├── useSpecies.ts           => interact with data stores side-effects
+|           ├── useSpeciesPeople.ts     => obtain selected items from radio tables
+|       ├── actions.ts          => action dispatch to stores.
+|       ├── reducer.ts          => describe how application response to actions
+|       ├── types.ts            => data types and action types use by dataStore folder.
+|       ├── utils.ts            => utility and helper functions
+|   ├── initialState.ts  => groups initialState of all reducers for combineReducers method
+|   ├── rootReducer.ts   => combine all reducers for store 
+├── store/               => global store of entire application
+|   ├── index.tsx           => StoreProvider required to be connected with Application root
+├── utils/               => utilities for entire project 
+├── views/               => presentational component 
+|   ├── components/             => reusable component without side-effects
+|   ├── containers/             => container with side-effects
+|   ├── presentations/          => number of pages available in the project
+|   ├── routes/                 => routes mapping to presentation component
+|   ├── app.tsx                 => root component
+└── index.tsx            => entry point of React application
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `npm run eject`
+*** 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Limitation
+==========
+The limitations of this application are listed below for better improvements on upcoming development:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. User experience of Select Species journey can be further improved, replace `Select` with `AutoComplete` so that user able to search across the list of species.
+2. Styling for entire application is not attractive, no instruction for user to perform any moves once arrive the page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Getting Started
+===============
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Running in Development
+----------------------
+1. Start the development environment with `npm`.
+```bash
+$ npm run start
+```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Environment
+===========
+1. NodeJS v12.18.3 
+2. NPM v6.14.6
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+
+
+
+
