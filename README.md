@@ -72,7 +72,7 @@ Running in Development
 ----------------------
 1. Perform clean dependencies install on the packages based on the version listed on `package.json` and `package-lock.json`.   
 ```bash
-$npm ci
+$ npm ci
 ```
 
 2. Start the development environment with `npm`.
