@@ -1,5 +1,5 @@
 # Star Wars Universe
-An application allow user to view the information of peoples under selected species, the weight and mass of people are plotted on **Scatter Graph**.
+An application allow user to view the information of peoples under selected species of Star Wars Universe, the weight and mass of people are plotted on **Scatter Graph**.
 
 ***
 
@@ -56,7 +56,6 @@ src/
 └── index.tsx            => entry point of React application
 
 ```
-
 *** 
 
 Limitation
