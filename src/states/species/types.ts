@@ -1,11 +1,13 @@
 export enum speciesActionTypes {
-    GET_LIST_SUCCESS   = "GET_LIST_SUCCESS",
-    GET_LIST_FAILURE   = "GET_LIST_FAILURE",
-    GET_PEOPLE_SUCCESS = "GET_PEOPLE_SUCCESS",
-    GET_PEOPLE_FAILURE = "GET_PEOPLE_FAILURE"
+    GET_LIST_SUCCESS    = "GET_LIST_SUCCESS",
+    GET_LIST_FAILURE    = "GET_LIST_FAILURE",
+    APPEND_SPECIES_LIST = "APPEND_SPECIES_LIST",
+    GET_PEOPLE_SUCCESS  = "GET_PEOPLE_SUCCESS",
+    GET_PEOPLE_FAILURE  = "GET_PEOPLE_FAILURE"
 }
 
 export type speciesReducerTypes = {
+    appendList: speciesResultType[],
     list: speciesResultType[],
     scatterChart: IScatterChart
 }
@@ -54,7 +56,15 @@ export type ISpeciesPeopleResponse = {
     url: string
 }
 
-export type ScatterChartDataType = Array<Array<string | number>>;
+export type ScatterChartTooltipType = {
+    role: string,
+    type: string,
+    p: {
+        html: boolean
+    }
+};
+
+export type ScatterChartDataType = Array<Array<string | number | ScatterChartTooltipType>>;
 export type ScatterChartAttributeType = {
     min: number,
     max: number

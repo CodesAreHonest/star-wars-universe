@@ -3,14 +3,6 @@ import { ScatterChart } from "../components/ScatterChart/ScatterChart";
 import { ScatterChartDataType } from "../../states/species/types";
 import { useSpeciesPeople } from "../../states/species/hooks/useSpeciesPeople";
 
-type ScatterChartContainerProps = {
-    data: ScatterChartDataType,
-    hMin: number,
-    hMax: number,
-    vMin: number,
-    vMax: number
-}
-
 const ScatterChartContainer = () => {
     const [scatterChartData] = useSpeciesPeople();
 

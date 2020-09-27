@@ -2,6 +2,7 @@ import { speciesActionTypes, speciesReducerTypes } from "./types";
 import { attributeMinAndMax, peopleScatterChartFormat } from "./utils";
 
 export const INITIAL_STATE: speciesReducerTypes = {
+    appendList  : [],
     list        : [],
     scatterChart: {
         data               : [],
@@ -18,10 +19,16 @@ export const INITIAL_STATE: speciesReducerTypes = {
 
 export const speciesReducer = (state = INITIAL_STATE, action: any) => {
     switch (action.type) {
+        case speciesActionTypes.APPEND_SPECIES_LIST: {
+            return {
+                ...state,
+                appendList: [...state.appendList, ...action.payload]
+            }
+        }
         case speciesActionTypes.GET_LIST_SUCCESS: {
             return {
                 ...state,
-                list: action.payload
+                list: state.appendList
             }
         }
         case speciesActionTypes.GET_LIST_FAILURE: {

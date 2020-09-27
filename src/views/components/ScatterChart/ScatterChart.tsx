@@ -1,41 +1,35 @@
 import React from 'react';
 import Chart from "react-google-charts";
 import { CircularProgress } from "@material-ui/core";
-import { ScatterChartDataType } from "../../../states/species/types";
-
-type ScatterChartProps = {
-    data: ScatterChartDataType,
-    hMin: number,
-    hMax: number,
-    vMin: number,
-    vMax: number
-}
-
-const data = [
-    ['Age', 'Weight'],
-    [8, 12],
-    [4, 5.5],
-    [11, 14],
-    [4, 5],
-    [3, 3.5],
-    [6.5, 7],
-];
-
 
 export const ScatterChart = ({ data, hMin, hMax, vMin, vMax }) => {
 
-    const [[horizontalTitle, verticalTitle]] = data;
+    const [[horizontalTitle = "", verticalTitle = ""]] = data;
 
     const options = {
-        hAxis : { title: horizontalTitle, minValue: hMin, maxValue: hMax },
-        vAxis : { title: verticalTitle, minValue: vMin, maxValue: vMax },
-        legend: "none"
+        hAxis    : {
+            title   : horizontalTitle,
+            minValue: hMin,
+            maxValue: hMax
+        },
+        vAxis    : {
+            title   : verticalTitle,
+            minValue: vMin,
+            maxValue: vMax
+        },
+        legend   : "none",
+        chartArea: {
+            width : "60%",
+            height: "70%"
+        },
+        tooltip  : { isHtml: true, trigger: "visible" },
+        is3D     : true
     };
 
     return (
         <Chart
-            width={'100%'}
-            height="80vh"
+            width="100%"
+            height="75vh"
             chartType="ScatterChart"
             loader={<CircularProgress/>}
             data={data}

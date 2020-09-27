@@ -1,4 +1,5 @@
-import React, { ChangeEventHandler } from 'react';
+import React from 'react';
+import { useStyles } from "./useStyles";
 import { speciesResultType } from "../../../states/species/types";
 
 type MaterialSelectProp = {
@@ -9,8 +10,15 @@ type MaterialSelectProp = {
 
 export const HTMLSelect: React.FC<MaterialSelectProp> = ({ value, onSelectChange, results }) => {
 
+    const classes = useStyles();
+
     return (
-        <select onChange={onSelectChange} value={value}>
+        <select
+            onChange={onSelectChange}
+            value={value}
+            className={classes.root}
+        >
+            <option value=""/>
             {results.map((option, key) => {
                 const { name } = option;
                 return (
@@ -19,4 +27,8 @@ export const HTMLSelect: React.FC<MaterialSelectProp> = ({ value, onSelectChange
             })}
         </select>
     )
+};
+
+HTMLSelect.defaultProps = {
+    results: []
 };

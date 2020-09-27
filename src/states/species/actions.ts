@@ -1,11 +1,13 @@
 import { ISpeciesPeopleResponse, speciesActionTypes, speciesResultType } from "./types";
 
-export const getListSuccess = (results: speciesResultType) => {
-    return {
-        type   : speciesActionTypes.GET_LIST_SUCCESS,
-        payload: results
-    }
-};
+export const appendSpeciesList = (results: speciesResultType) => ({
+    type   : speciesActionTypes.APPEND_SPECIES_LIST,
+    payload: results
+});
+
+export const getListSuccess = () => ({
+    type: speciesActionTypes.GET_LIST_SUCCESS,
+});
 
 export const getListFailure = () => ({
     type: speciesActionTypes.GET_LIST_FAILURE
